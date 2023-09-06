@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: firstwebapp
+  namespace: development
+  labels: 
+    app: firstwebapp
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: firstwebapp
+  template:
+    metadata:
+      labels:
+        app: firstwebapp
+    spec:
+      containers:
+        - image: "adikrisnanugraha/firstwebapp"
+          imagePullPolicy: Always
+          name: firstwebapp
+          ports:
+            - containerPort: 80

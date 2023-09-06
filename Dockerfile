@@ -1,17 +1,17 @@
-# build stage
-FROM mcr.microsoft.com/dotnet/sdk:7.0.400 AS build-env
+FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build-env
 WORKDIR /app
 
-# copy csproj and restore as distinct layers
+# Salin file csproj dan restore
 COPY *.csproj ./
 RUN dotnet restore
 
-# copy everything else and build
+# Salin seluruh aplikasi dan build
 COPY . ./
 RUN dotnet publish -c Release -o out
 
-# runtime stage
-FROM mcr.microsoft.com/dotnet/aspnet:7.0.400
+# Tahap runtime
+FROM mcr.microsoft.com/dotnet/aspnet:6.0
 WORKDIR /app
 COPY --from=build-env /app/out .
+
 ENTRYPOINT ["dotnet", "FirstWebApps.dll"]
