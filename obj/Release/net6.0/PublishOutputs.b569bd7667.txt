@@ -1,0 +1,7 @@
+C:\Users\sigma\source\repos\FirstWebApps\FirstWebApps\obj\Release\net6.0\PubTmp\Out\FirstWebApps.exe
+C:\Users\sigma\source\repos\FirstWebApps\FirstWebApps\obj\Release\net6.0\PubTmp\Out\appsettings.Development.json
+C:\Users\sigma\source\repos\FirstWebApps\FirstWebApps\obj\Release\net6.0\PubTmp\Out\appsettings.json
+C:\Users\sigma\source\repos\FirstWebApps\FirstWebApps\obj\Release\net6.0\PubTmp\Out\FirstWebApps.dll
+C:\Users\sigma\source\repos\FirstWebApps\FirstWebApps\obj\Release\net6.0\PubTmp\Out\FirstWebApps.deps.json
+C:\Users\sigma\source\repos\FirstWebApps\FirstWebApps\obj\Release\net6.0\PubTmp\Out\FirstWebApps.runtimeconfig.json
+C:\Users\sigma\source\repos\FirstWebApps\FirstWebApps\obj\Release\net6.0\PubTmp\Out\FirstWebApps.pdb
