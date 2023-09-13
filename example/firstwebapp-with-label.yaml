@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+    name: firstwebapp-with-label
+    labels:
+        team: devops
+        version: 1.4.5
+        environment: production
+spec:
+    containers:
+        - name: firstwebapp
+          image: adikrisnanugraha/firstwebapp
+          ports:
+            - containerPort: 80

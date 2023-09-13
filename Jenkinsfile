@@ -1,49 +1,54 @@
 pipeline {
-
-  environment {
-    dockerimagename = "adikrisnanugraha/firstwebapp"
-    dockerImage = ""
-  }
-
-  agent any
-
-  stages {
-
-    stage('Checkout Source') {
-      steps {
-        git (url:'https://github.com/adikrisnaffa/sample-asp.git', credentialsId: "github-credentials")
-      }
-    }
-
-    stage('Build image') {
-      steps{
-        script {
-          dockerImage = docker.build dockerimagename
+    agent any
+    
+    stages {
+        stage ('Checkout Source') {
+            steps {
+                checkout scmGit(branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/adikrisnaffa/sample-asp.git']])
+            }
         }
-      }
-    }
-
-    stage('Pushing Image') {
-      environment {
-               registryCredential = 'dockerhub-credentials'
-           }
-      steps{
-        script {
-          docker.withRegistry( 'https://registry.hub.docker.com', registryCredential ) {
-            dockerImage.push("latest")
-          }
+        
+        stage('Restore dotnet') {
+            steps {
+                bat(script: 'dotnet restore', returnStatus: true)
+            }
         }
-      }
-    }
-
-    stage('Deploying App to Kubernetes') {
-      steps {
-        script {
-          kubernetesDeploy(configs: "deployment.yaml", "service.yaml", kubeconfigId: "mykubeconfig")
+        
+        stage('Build dotnet') {
+            steps {
+                bat(script: 'dotnet publish -c Release -o out', returnStatus: true)
+            }
         }
-      }
+        
+        stage('Build Image Docker') {
+            steps {
+                bat 'docker build -t adikrisnanugraha/jenkins-docker-hub .'
+            }
+        }
+        
+        stage('Push Image to Docker hub') {
+            steps {
+                script {
+                    withCredentials([string(credentialsId: 'dockerhub-pwd', variable: 'dockerhubpwd')]) {
+                        bat "docker login -u adikrisnanugraha -p %dockerhubpwd%"
+                        bat 'docker push adikrisnanugraha/jenkins-docker-hub'
+                        
+                    }
+                    
+                }
+                
+            }
+            
+        }
+        
+        stage('Deploying to Minikube Kubernetes') {
+            steps {
+                script {
+                    
+                }
+            }
+        }
+
+        
     }
-
-  }
-
 }

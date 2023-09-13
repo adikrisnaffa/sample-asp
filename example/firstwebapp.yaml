@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+    name: firstwebapp
+spec:
+    containers:
+        - name: firstwebapp
+          image: adikrisnanugraha/firstwebapp
+          ports:
+            - containerPort: 80

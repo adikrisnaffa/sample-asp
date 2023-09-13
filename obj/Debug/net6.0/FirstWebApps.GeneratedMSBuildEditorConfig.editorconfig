@@ -16,6 +16,22 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\sigma\source\repos\FirstWebApps\FirstWebApps
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/sigma/source/repos/FirstWebApps/FirstWebApps/Pages/Clients/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2xpZW50c1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/sigma/source/repos/FirstWebApps/FirstWebApps/Pages/Clients/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2xpZW50c1xEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/sigma/source/repos/FirstWebApps/FirstWebApps/Pages/Clients/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2xpZW50c1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/sigma/source/repos/FirstWebApps/FirstWebApps/Pages/Clients/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2xpZW50c1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/sigma/source/repos/FirstWebApps/FirstWebApps/Pages/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 

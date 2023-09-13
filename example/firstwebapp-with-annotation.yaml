@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+    name: firstwebapp-with-annotation
+    labels:
+        team: qa
+        version: 1.0.1
+        environment: qa
+    annotations:
+        description: Ini adalah aplikasi yang dibuat oleh tim qa
+spec:
+    containers:
+        - name: firstwebapp
+          image: adikrisnanugraha/firstwebapp
+          ports:
+            - containerPort: 80
